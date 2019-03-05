@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "react-a-isuggestion-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/reactAIsuggestion/ReactAIsuggestionWebPart.js",
+          "manifest": "./src/webparts/reactAIsuggestion/ReactAIsuggestionWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ReactAIsuggestionWebPartStrings": "lib/webparts/reactAIsuggestion/loc/{locale}.js"
+  }
+}

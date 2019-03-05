@@ -1,0 +1,170 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+
+:global {
+
+.ms-ListGridReactAISuggestion .ms-List-page {
+  overflow: hidden;
+  font-size: 0;
+}
+
+.ms-ListGridReactAISuggestion .ms-List-surface {
+  position: relative;
+}
+
+.ms-ListGridReactAISuggestion-tile {
+  text-align: center;
+  outline: none;
+  position: relative;
+  @include ms-float(left);
+  background: $ms-color-neutralLighter;
+}
+
+.ms-ListGridReactAISuggestion-sizer {
+  padding-bottom: 100%;
+}
+
+.msListGridReactAISuggestion-padder {
+  overflow: hidden;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+}
+
+.ms-Fabric--isFocusVisible .ms-ListGridReactAISuggestion-tile:focus:after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  box-sizing: border-box;
+  border: 1px solid $ms-color-white;
+}
+
+.ms-ListGridReactAISuggestion-label {
+  background: rgba(0,0,0,.3);
+  color: #ffffff;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
+  left: 0;
+  width: 100%;
+  font-size: $ms-font-size-s;
+  box-sizing: border-box;
+}
+
+.ms-ListGridReactAISuggestion-image {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+}
+
+
+  
+ .thumbsContainerDrop{
+  display: 'flex';
+  flexDirection: 'row';
+  flexWrap: 'wrap';
+  marginTop: 16
+};
+
+.thumbDrop{
+  display: 'inline-flex';
+  borderRadius: 2;
+  border: '1px solid #eaeaea';
+  marginBottom: 8;
+  marginRight: 8;
+  width: 100px;
+  height: 100px;
+  padding: 4;
+  boxSizing: 'border-box'
+};
+
+.thumbInnerDrop{
+  display: 'flex';
+  minWidth: 0;
+  overflow: 'hidden'
+}
+
+.imgDrop{
+  display: 'block';
+  width: '100px';
+  height: '20%'
+}
+
+  .container {
+    max-width: 700px;
+    margin: 0px auto;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .row {
+    @include ms-Grid-row;
+    @include ms-fontColor-white;
+    background-color: $ms-color-themeDark;
+    padding: 20px;
+  }
+
+  .column {
+    @include ms-Grid-col;
+    @include ms-lg10;
+    @include ms-xl8;
+    @include ms-xlPush2;
+    @include ms-lgPush1;
+  }
+
+  .title {
+    @include ms-font-xl;
+    @include ms-fontColor-white;
+  }
+
+  .subTitle {
+    @include ms-font-l;
+    @include ms-fontColor-white;
+  }
+
+  .description {
+    @include ms-font-l;
+    @include ms-fontColor-white;
+  }
+
+  .button {
+    // Our button
+    text-decoration: none;
+    height: 32px;
+
+    // Primary Button
+    min-width: 80px;
+    background-color: $ms-color-themePrimary;
+    border-color: $ms-color-themePrimary;
+    color: $ms-color-white;
+
+    // Basic Button
+    outline: transparent;
+    position: relative;
+    font-family: "Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: $ms-font-size-m;
+    font-weight: $ms-font-weight-regular;
+    border-width: 0;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 16px;
+
+    .label {
+      font-weight: $ms-font-weight-semibold;
+      font-size: $ms-font-size-m;
+      height: 32px;
+      line-height: 32px;
+      margin: 0 4px;
+      vertical-align: top;
+      display: inline-block;
+    }
+  }
