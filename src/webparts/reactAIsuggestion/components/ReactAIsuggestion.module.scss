@@ -45,7 +45,7 @@
 }
 
 .ms-ListGridReactAISuggestion-label {
-  background: rgba(0,0,0,.3);
+  background: rgba(0,0,0,.6);
   color: #ffffff;
   padding: 10px;
   position: absolute;
@@ -55,6 +55,10 @@
   width: 100%;
   font-size: $ms-font-size-s;
   box-sizing: border-box;
+  overflow: hidden;
+  max-height: 100px;
+  min-height: 100px;
+
 }
 
 .ms-ListGridReactAISuggestion-image {
@@ -69,33 +73,45 @@
   
  .thumbsContainerDrop{
   display: 'flex';
-  flexDirection: 'row';
-  flexWrap: 'wrap';
-  marginTop: 16
+  flex-direction: 'row';
+  flex-wrap: 'wrap';
+  margin-top: 16
 };
 
 .thumbDrop{
-  display: 'inline-flex';
-  borderRadius: 2;
+  display: 'block';
+  border-radius: 2;
   border: '1px solid #eaeaea';
-  marginBottom: 8;
-  marginRight: 8;
-  width: 100px;
-  height: 100px;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 4;
-  boxSizing: 'border-box'
+  box-sizing: 'border-box' 
+
 };
 
 .thumbInnerDrop{
-  display: 'flex';
-  minWidth: 0;
-  overflow: 'hidden'
+  min-width: 0;
+  overflow: 'hidden';
+  width: 600px;
+  height: 250px;
+
+}
+
+.pDrop{
+  border: solid;
+  border-style: dotted;
+  width: 100%;
+  height: 100px;
 }
 
 .imgDrop{
   display: 'block';
-  width: '100px';
-  height: '20%'
+  max-width: 100%;
+  max-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
   .container {

@@ -1,20 +1,21 @@
 import * as React from 'react';
+import { Fragment } from 'react';
 import { IReactAIsuggestionProps } from './IReactAIsuggestionProps';
 
 import Dropzone from 'react-dropzone'
-import { FocusZone } from 'office-ui-fabric-react/lib/FocusZone';
-import { List } from 'office-ui-fabric-react/lib/List';
-import { IRectangle } from 'office-ui-fabric-react/lib/Utilities';
+import { FocusZone, TextField, List, IRectangle } from 'office-ui-fabric-react';
 
-import { sp } from "@pnp/sp";
+import { sp, SearchQueryBuilder, SearchQuery } from "@pnp/sp";
 import { IHttpClientOptions, HttpClientResponse, HttpClient } from '@microsoft/sp-http';
+import { String, StringBuilder } from 'typescript-string-operations';
+
 
 import styles from './ReactAIsuggestion.module.scss';
 
 export interface IReactAIsuggestionState {
   files: any[];
   items: any[];
-
+  tagsResult: string;
 }
 const ROWS_PER_PAGE = 3;
 const MAX_ROW_HEIGHT = 250;
@@ -34,6 +35,7 @@ export default class ReactAIsuggestion extends React.Component<IReactAIsuggestio
   private _columnWidth: number;
   private _rowHeight: number;
 
+
   private onDrop(files) {
     this.setState({
       files: files.map(file => Object.assign(file, {
@@ -42,30 +44,46 @@ export default class ReactAIsuggestion extends React.Component<IReactAIsuggestio
     });
 
     this._getTagsForImage(files[0])
-      .then((tags: any) => {
+      .then((tags: string[]) => {
 
-        const data = [];
-        let _data = {};
+        //first 3 relevants tag, join by coma and build  FQL query
+        //https://docs.microsoft.com/en-us/sharepoint/dev/general-development/fast-query-language-fql-syntax-reference
+        var tagsText = "";
+        var tagsQuery = "";
+        tags.slice(0, 3).forEach(element => {
+          tagsText += String.Format("{0}; ", element['name']);
+          tagsQuery += String.Format('"{0}",', element['name']);
+        });
 
-        // define a search query object matching the SearchQuery interface
-        var queryText=tags[0].name;
-        sp.search({
-          Querytext: queryText
-          //RowLimit: 10,
-          //EnableInterleaving: true,
-          //SelectProperties: ["Title", "Author", "Description", "SiteDescription", "EncodedAbsUrl", "LastModifiedTime", "PictureThumbnailURL", "Path", "Keywords"]
-        }).then((r: any) => {//it was SearchResults
+        tagsQuery=tagsQuery.substr(0,tagsQuery.length-1);
+        this.setState({ tagsResult: tagsText });
+
+        //var q = 'and(near(' + tagsQuery + 'N=2),filetype:"jpg")';
+        var q = String.Format('and(or({0}),filetype:"jpg")', tagsQuery);
+        //var q = tagsQuery;
+        const _searchQuerySettings: SearchQuery = {
+          TrimDuplicates: true,
+          EnableFQL: true,
+          RowLimit: 50,
+          SelectProperties: ["Title", "SPWebUrl", "DefaultEncodingURL", "HitHighlightedSummary","KeywordsOWSMTXT"]
+        }
+
+        let query = SearchQueryBuilder(q, _searchQuerySettings);
+
+
+        sp.search(query).then((r: any) => {//it was SearchResults
           console.log(r.ElapsedTime);
           console.log(r.RowCount);
           console.log(r.PrimarySearchResults);
-
+          const data = [];
+          let _data = {};
           r.PrimarySearchResults.forEach(element => {
             console.log(element);
             _data = {
               key: element.UniqueId,
               name: 'Item ' + element.Title,
-              tags: element.HitHighlightedSummary,
-              thumbnail: element.PictureThumbnailURL
+              tags: element.KeywordsOWSMTXT,
+              thumbnail: element.DefaultEncodingURL
             };
 
             data.push(_data);
@@ -128,7 +146,8 @@ export default class ReactAIsuggestion extends React.Component<IReactAIsuggestio
     super(props);
     this.state = {
       files: [],
-      items: []
+      items: [],
+      tagsResult: ""
     };
   }
 
@@ -151,7 +170,6 @@ export default class ReactAIsuggestion extends React.Component<IReactAIsuggestio
     return (
       <div>
         <section>
-
           <Dropzone
             accept="image/*"
             onDrop={this.onDrop.bind(this)}
@@ -159,15 +177,16 @@ export default class ReactAIsuggestion extends React.Component<IReactAIsuggestio
             {({ getRootProps, getInputProps }) => (
               <div {...getRootProps()}>
                 <input {...getInputProps()} />
-                <p>Drop files here</p>
+                <p className={styles.pDrop}>Drop files here</p>
               </div>
             )}
           </Dropzone>
+          <TextField label="Tags Results" readOnly={true} value={this.state.tagsResult} />
           <aside className={styles.thumbsContainerDrop}>
             {thumbs}
           </aside>
         </section>
-        <br /><br /><br /><br /><br /><br />
+        <br />
         <FocusZone>
           <List
             className="ms-ListGridReactAISuggestion"
@@ -209,7 +228,7 @@ export default class ReactAIsuggestion extends React.Component<IReactAIsuggestio
         <div className="ms-ListGridReactAISuggestion-sizer">
           <div className="msListGridReactAISuggestion-padder">
             <img src={item.thumbnail} className="ms-ListGridReactAISuggestion-image" />
-            <span className="ms-ListGridReactAISuggestion-label">{item.tags}</span>
+            <span className="ms-ListGridReactAISuggestion-label"><Fragment>{item.tags}</Fragment></span>
           </div>
         </div>
       </div>
