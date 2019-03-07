@@ -24,7 +24,7 @@ Keywords of the images in the library are enriched during upload thanks to a flo
 
 Solution|Author
 --------|---------
-react-ai-images-suggestion | Federico Porceddu
+react-ai-images-suggestion | [Federico Porceddu](https://www.federicoporceddu.com)
 
 ## Version history
 
