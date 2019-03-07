@@ -1,12 +1,13 @@
 # react-ai-images-suggestion
 
 ## Summary
-Short summary on functionality and used technologies.
+A spfx webpart that to upload an image (using open source library [react-dropzone](https://github.com/react-dropzone/react-dropzone)) and immediatly search for visually similar images inside an Image Library, using [Azure Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/) and [SharePoint Search REST API](https://docs.microsoft.com/en-us/sharepoint/dev/general-development/sharepoint-search-rest-api-overview). 
+Keywords of the images in the library are enriched during upload thanks to a flow connected to the Azure Cognitive Services (thanks to [rasper87](https://rasper87.wordpress.com/2018/05/11/sharepoint-auto-tagging-with-ai-and-flow/) for the inspiration)
 
 [picture(s) of the solution in action]
 
 ## Used SharePoint Framework Version 
-![drop](https://img.shields.io/badge/version-GA-green.svg)
+![drop](https://camo.githubusercontent.com/76987ab657772dcca5321aba68f3ee6b993fd651/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f535046782d312e372e312d677265656e2e737667)
 
 ## Applies to
 
@@ -17,20 +18,19 @@ Short summary on functionality and used technologies.
 
 ## Prerequisites
  
-> Any special pre-requisites?
+> n.a.
 
 ## Solution
 
-Solution|Author(s)
+Solution|Author
 --------|---------
-folder name | Author details
+react-ai-images-suggestion | Federico Porceddu
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.1|August 10, 2018|Update comment
-1.0|June 29, 2018|Initial release
+1.0|March 8, 2019|Initial release
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
@@ -45,7 +45,6 @@ Version|Date|Comments
   - `npm install`
   - `gulp serve`
 
-> Include any additional steps as needed.
 
 ## Features
 Description of the extension with possible additional details than in short summary.
@@ -54,7 +53,5 @@ This extension illustrates the following concepts:
 - topic 1
 - topic 2
 - topic 3
-
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-solutions/solutions/TimeAway" /># react-ai-images-suggestion
