@@ -7,10 +7,11 @@ import { FocusZone, TextField, List, IRectangle } from 'office-ui-fabric-react';
 
 import { sp, SearchQueryBuilder, SearchQuery } from "@pnp/sp";
 import { IHttpClientOptions, HttpClientResponse, HttpClient } from '@microsoft/sp-http';
-import { String, StringBuilder } from 'typescript-string-operations';
-
+import { String } from 'typescript-string-operations';
+import * as strings from 'ReactAIsuggestionWebPartStrings';
 
 import styles from './ReactAIsuggestion.module.scss';
+import { stringIsNullOrEmpty } from '@pnp/common';
 
 export interface IReactAIsuggestionState {
   files: any[];
@@ -55,7 +56,7 @@ export default class ReactAIsuggestion extends React.Component<IReactAIsuggestio
           tagsQuery += String.Format('"{0}",', element['name']);
         });
 
-        tagsQuery=tagsQuery.substr(0,tagsQuery.length-1);
+        tagsQuery = tagsQuery.substr(0, tagsQuery.length - 1);
         this.setState({ tagsResult: tagsText });
 
         //var q = 'and(near(' + tagsQuery + 'N=2),filetype:"jpg")';
@@ -65,7 +66,7 @@ export default class ReactAIsuggestion extends React.Component<IReactAIsuggestio
           TrimDuplicates: true,
           EnableFQL: true,
           RowLimit: 50,
-          SelectProperties: ["Title", "SPWebUrl", "DefaultEncodingURL", "HitHighlightedSummary","KeywordsOWSMTXT"]
+          SelectProperties: ["Title", "SPWebUrl", "DefaultEncodingURL", "HitHighlightedSummary", "KeywordsOWSMTXT"]
         }
 
         let query = SearchQueryBuilder(q, _searchQuerySettings);
@@ -177,11 +178,11 @@ export default class ReactAIsuggestion extends React.Component<IReactAIsuggestio
             {({ getRootProps, getInputProps }) => (
               <div {...getRootProps()}>
                 <input {...getInputProps()} />
-                <p className={styles.pDrop}>Drop files here</p>
+                <p className={styles.pDrop}>{strings.DropFileHere}</p>
               </div>
             )}
           </Dropzone>
-          <TextField label="Tags Results" readOnly={true} value={this.state.tagsResult} />
+          <TextField label={strings.TagsResult} readOnly={true} value={this.state.tagsResult} />
           <aside className={styles.thumbsContainerDrop}>
             {thumbs}
           </aside>
