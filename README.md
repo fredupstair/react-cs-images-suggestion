@@ -4,7 +4,8 @@
 A spfx webpart that to upload an image (using open source library [react-dropzone](https://github.com/react-dropzone/react-dropzone)) and immediatly search for visually similar images inside an Image Library, using [Azure Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/) and [SharePoint Search REST API](https://docs.microsoft.com/en-us/sharepoint/dev/general-development/sharepoint-search-rest-api-overview). 
 Keywords of the images in the library are enriched during upload thanks to a flow connected to the Azure Cognitive Services (thanks to [rasper87](https://rasper87.wordpress.com/2018/05/11/sharepoint-auto-tagging-with-ai-and-flow/) for the inspiration)
 
-[picture(s) of the solution in action]
+## Architecture
+![Architecture](./assets/react-ai-images-suggestion.png)
 
 ## Used SharePoint Framework Version 
 ![drop](https://camo.githubusercontent.com/76987ab657772dcca5321aba68f3ee6b993fd651/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f535046782d312e372e312d677265656e2e737667)
