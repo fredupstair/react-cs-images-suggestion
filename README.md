@@ -25,11 +25,9 @@ Keywords of the images in the library are enriched during upload thanks to a Mic
 * [SharePoint Framework](https://dev.office.com/sharepoint)
 * [Office 365 tenant](https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment)
 
-> Update accordingly as needed.
-
 ## Prerequisites
  
-> n.a.
+* Azure Subscription
 
 ## Solution
 
