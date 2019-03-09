@@ -7,9 +7,6 @@ Keywords of the images in the library are enriched during upload thanks to a Mic
 ## Architecture
 ![Architecture](./assets/react-ai-images-suggestion.png)
 
-## Microsfot Flow in action!
-![FlowAction](./assets/flow-cognitive-documentlibrary.gif)
-
 ## react-ai-images-suggestion SPFX WebPart in action!
 ![WebPartInAction](./assets/react-ai-images-suggestion-spfx-webpart-action.gif)
 
