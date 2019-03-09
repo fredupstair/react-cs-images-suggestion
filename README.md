@@ -1,8 +1,9 @@
 # react-ai-images-suggestion
 
 ## Summary
-A spfx webpart that to upload an image (using open source library [react-dropzone](https://github.com/react-dropzone/react-dropzone)) and immediatly search for visually similar images inside an Image Library, using [Azure Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/) and [SharePoint Search REST API](https://docs.microsoft.com/en-us/sharepoint/dev/general-development/sharepoint-search-rest-api-overview). 
-Keywords of the images in the library are enriched during upload thanks to a Microsoft Flow connected to the Azure Cognitive Services (thanks to [rasper87](https://rasper87.wordpress.com/2018/05/11/sharepoint-auto-tagging-with-ai-and-flow/) for the inspiration, steps 1/4 in the architecture)
+A SPFX webpart using the open source library [react-dropzone](https://github.com/react-dropzone/react-dropzone) to upload an image and immediately search for visually similar images inside an Image Library, using [Azure Cognitive Services - Computer Vision](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/) and [SharePoint Search REST API](https://docs.microsoft.com/en-us/sharepoint/dev/general-development/sharepoint-search-rest-api-overview). 
+Keywords of the images in the library are enriched during upload thanks to a Microsoft Flow connected to the Azure Cognitive Services Computer Vision (thanks to [rasper87](https://rasper87.wordpress.com/2018/05/11/sharepoint-auto-tagging-with-ai-and-flow/) for the inspiration, steps 1/4 in the architecture)
+
 
 ## Architecture
 ![Architecture](./assets/react-ai-images-suggestion.png)
@@ -51,13 +52,21 @@ Version|Date|Comments
 - in the command line run:
   - `npm install`
   - `gulp serve`
+- create Azure Cognitive EndPoint, change the key into cognitiveServicesKey 
+- create AI Picture  Library into your Modern Team Site
+- create MS FLow following Microsoft Flow configuration with Azure Cognitive Services instructions
+- Upload images, let's SharePoint crawler run (some minutes)
 
 
 ## Features
 This webpart illustrates the following concepts:
 
 - Microsoft Flow
-- Azure Cognitive Services
-- topic 3
+- Make a post to Azure Cognitive Services with [PnP/PnPjs])(https://github.com/pnp/pnpjs)
+- [@pnp/sp/search](https://github.com/pnp/pnpjs/blob/dev/packages/sp/docs/search.md)
+- [FAST Query Language (FQL)](https://docs.microsoft.com/en-us/sharepoint/dev/general-development/fast-query-language-fql-syntax-reference)
+- [Azure Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/)
+- [react-dropzone](https://github.com/react-dropzone/react-dropzone)
+- [Office UI Fabric React Component List](https://developer.microsoft.com/en-us/fabric#/components/list#Variants)
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-solutions/solutions/TimeAway" /># react-ai-images-suggestion
