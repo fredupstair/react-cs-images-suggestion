@@ -11,6 +11,9 @@ Keywords of the images in the library are enriched during upload thanks to a Mic
 ## react-ai-images-suggestion SPFX WebPart in action!
 ![WebPartInAction](./assets/react-ai-images-suggestion-spfx-webpart-action.gif)
 
+## Microsoft Flow in action!
+![FlowInAction](./assets/flow-cognitive-documentlibrary.gif)
+
 ## Microsoft Flow configuration with Azure Cognitive Services
 ![Flow](./assets/flow-azure-cognitive-sharepoint-tags.png)
 
