@@ -1,7 +1,7 @@
 # react-ai-images-suggestion
 
 ## Summary
-A SPFX webpart using the open source library [react-dropzone](https://github.com/react-dropzone/react-dropzone) to upload an image and immediately search for visually similar images inside a SharePoint Online Picture Library, using [Azure Cognitive Services - Computer Vision](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/) and [SharePoint Search REST API](https://docs.microsoft.com/en-us/sharepoint/dev/general-development/sharepoint-search-rest-api-overview). 
+A SPFX webpart using the open source library [react-dropzone](https://github.com/react-dropzone/react-dropzone) to upload an image and immediately search for visually similar images inside a SharePoint Online Picture Library, by the employment of [Azure Cognitive Services - Computer Vision](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/) and [SharePoint Search REST API](https://docs.microsoft.com/en-us/sharepoint/dev/general-development/sharepoint-search-rest-api-overview). 
 Keywords of the images in the library are enriched during upload thanks to a Microsoft Flow connected to the Azure Cognitive Services Computer Vision (thanks to [rasper87](https://rasper87.wordpress.com/2018/05/11/sharepoint-auto-tagging-with-ai-and-flow/) for the inspiration, steps 1-4 in the architecture)
 
 
@@ -53,7 +53,7 @@ Version|Date|Comments
   - `npm install`
   - `gulp serve`
 - create Azure Cognitive EndPoint, change the key into cognitiveServicesKey 
-- create AI Picture  Library into your Modern Team Site
+- create AI Picture Library into your Modern Team Site
 - create MS FLow following Microsoft Flow configuration with Azure Cognitive Services instructions
 - Upload images, let's SharePoint crawler run (some minutes)
 
