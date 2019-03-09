@@ -62,7 +62,7 @@ Version|Date|Comments
 This webpart illustrates the following concepts:
 
 - Microsoft Flow
-- Make a post to Azure Cognitive Services with [PnP/PnPjs])(https://github.com/pnp/pnpjs)
+- Make a post to Azure Cognitive Services with [PnP/PnPjs](https://github.com/pnp/pnpjs)
 - [@pnp/sp/search](https://github.com/pnp/pnpjs/blob/dev/packages/sp/docs/search.md)
 - [FAST Query Language (FQL)](https://docs.microsoft.com/en-us/sharepoint/dev/general-development/fast-query-language-fql-syntax-reference)
 - [Azure Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/)
