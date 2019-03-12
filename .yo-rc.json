@@ -3,7 +3,7 @@
     "isCreatingSolution": true,
     "environment": "spo",
     "version": "1.7.1",
-    "libraryName": "react-ml-images-suggestion",
+    "libraryName": "react-cs-images-suggestion",
     "libraryId": "a8a5cc23-dbca-491c-801f-94b6d5ec3820",
     "packageManager": "npm",
     "componentType": "webpart"

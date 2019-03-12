@@ -3,16 +3,16 @@
 
 :global {
 
-.ms-ListGridReactAISuggestion .ms-List-page {
+.ms-ListGridReactCSsuggestion .ms-List-page {
   overflow: hidden;
   font-size: 0;
 }
 
-.ms-ListGridReactAISuggestion .ms-List-surface {
+.ms-ListGridReactCSsuggestion .ms-List-surface {
   position: relative;
 }
 
-.ms-ListGridReactAISuggestion-tile {
+.ms-ListGridReactCSsuggestion-tile {
   text-align: center;
   outline: none;
   position: relative;
@@ -20,11 +20,11 @@
   background: $ms-color-neutralLighter;
 }
 
-.ms-ListGridReactAISuggestion-sizer {
+.ms-ListGridReactCSsuggestion-sizer {
   padding-bottom: 100%;
 }
 
-.msListGridReactAISuggestion-padder {
+.msListGridReactCSsuggestion-padder {
   overflow: hidden;
   position: absolute;
   left: 2px;
@@ -33,7 +33,7 @@
   bottom: 2px;
 }
 
-.ms-Fabric--isFocusVisible .ms-ListGridReactAISuggestion-tile:focus:after {
+.ms-Fabric--isFocusVisible .ms-ListGridReactCSsuggestion-tile:focus:after {
   content: '';
   position: absolute;
   left: 2px;
@@ -44,7 +44,7 @@
   border: 1px solid $ms-color-white;
 }
 
-.ms-ListGridReactAISuggestion-label {
+.ms-ListGridReactCSsuggestion-label {
   background: rgba(0,0,0,.6);
   color: #ffffff;
   padding: 10px;
@@ -61,7 +61,7 @@
 
 }
 
-.ms-ListGridReactAISuggestion-image {
+.ms-ListGridReactCSsuggestion-image {
   width: 100%;
   position: absolute;
   left: 0;

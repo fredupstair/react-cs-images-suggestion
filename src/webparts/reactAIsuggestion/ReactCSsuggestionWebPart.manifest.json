@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
   "id": "08c97e13-76c2-4df7-a1c6-fb51f4645be4",
-  "alias": "ReactAIsuggestionWebPart",
+  "alias": "ReactCSsuggestionWebPart",
   "componentType": "WebPart",
 
   // The "*" signifies that the version should be taken from the package.json
@@ -16,11 +16,11 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
     "group": { "default": "Other" },
-    "title": { "default": "ReactAIsuggestion" },
-    "description": { "default": "ReactAIsuggestion description" },
+    "title": { "default": "ReactCSsuggestion" },
+    "description": { "default": "ReactCSsuggestion description" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "ReactAIsuggestion"
+      "description": "ReactCSsuggestion"
     }
   }]
 }

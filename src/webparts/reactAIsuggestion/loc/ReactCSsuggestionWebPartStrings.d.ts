@@ -1,4 +1,4 @@
-declare interface IReactAIsuggestionWebPartStrings {
+declare interface IReactCSsuggestionWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
   DescriptionFieldLabel: string;
@@ -6,7 +6,7 @@ declare interface IReactAIsuggestionWebPartStrings {
   TagsResult:string;
 }
 
-declare module 'ReactAIsuggestionWebPartStrings' {
-  const strings: IReactAIsuggestionWebPartStrings;
+declare module 'ReactCSsuggestionWebPartStrings' {
+  const strings: IReactCSsuggestionWebPartStrings;
   export = strings;
 }

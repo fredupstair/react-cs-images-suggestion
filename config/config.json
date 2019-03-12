@@ -5,14 +5,14 @@
     "react-a-isuggestion-web-part": {
       "components": [
         {
-          "entrypoint": "./lib/webparts/reactAIsuggestion/ReactAIsuggestionWebPart.js",
-          "manifest": "./src/webparts/reactAIsuggestion/ReactAIsuggestionWebPart.manifest.json"
+          "entrypoint": "./lib/webparts/ReactCSsuggestion/ReactCSsuggestionWebPart.js",
+          "manifest": "./src/webparts/ReactCSsuggestion/ReactCSsuggestionWebPart.manifest.json"
         }
       ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "ReactAIsuggestionWebPartStrings": "lib/webparts/reactAIsuggestion/loc/{locale}.js"
+    "ReactCSsuggestionWebPartStrings": "lib/webparts/ReactCSsuggestion/loc/{locale}.js"
   }
 }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Fragment } from 'react';
-import { IReactAIsuggestionProps } from './IReactAIsuggestionProps';
+import { IReactCSsuggestionProps } from './IReactCSsuggestionProps';
 
 import Dropzone from 'react-dropzone'
 import { FocusZone, TextField, List, IRectangle } from 'office-ui-fabric-react';
@@ -8,12 +8,12 @@ import { FocusZone, TextField, List, IRectangle } from 'office-ui-fabric-react';
 import { sp, SearchQueryBuilder, SearchQuery } from "@pnp/sp";
 import { IHttpClientOptions, HttpClientResponse, HttpClient } from '@microsoft/sp-http';
 import { String } from 'typescript-string-operations';
-import * as strings from 'ReactAIsuggestionWebPartStrings';
+import * as strings from 'ReactCSsuggestionWebPartStrings';
 
-import styles from './ReactAIsuggestion.module.scss';
+import styles from './ReactCSsuggestion.module.scss';
 import { stringIsNullOrEmpty } from '@pnp/common';
 
-export interface IReactAIsuggestionState {
+export interface IReactCSsuggestionState {
   files: any[];
   items: any[];
   tagsResult: string;
@@ -21,11 +21,11 @@ export interface IReactAIsuggestionState {
 const ROWS_PER_PAGE = 3;
 const MAX_ROW_HEIGHT = 250;
 
-export interface IReactAIsuggestionProps {
+export interface IReactCSsuggestionProps {
   context: any
 }
 
-export default class ReactAIsuggestion extends React.Component<IReactAIsuggestionProps, IReactAIsuggestionState> {
+export default class ReactCSsuggestion extends React.Component<IReactCSsuggestionProps, IReactCSsuggestionState> {
 
 
   private cognitiveServicesKey: string = "";
@@ -143,7 +143,7 @@ export default class ReactAIsuggestion extends React.Component<IReactAIsuggestio
     this.state.files.forEach(file => URL.revokeObjectURL(file.preview))
   }
 
-  constructor(props: IReactAIsuggestionProps) {
+  constructor(props: IReactCSsuggestionProps) {
     super(props);
     this.state = {
       files: [],
@@ -152,7 +152,7 @@ export default class ReactAIsuggestion extends React.Component<IReactAIsuggestio
     };
   }
 
-  public render(): React.ReactElement<IReactAIsuggestionProps> {
+  public render(): React.ReactElement<IReactCSsuggestionProps> {
     const { files } = this.state;
 
     const thumbs = files.map(file => (
@@ -190,7 +190,7 @@ export default class ReactAIsuggestion extends React.Component<IReactAIsuggestio
         <br />
         <FocusZone>
           <List
-            className="ms-ListGridReactAISuggestion"
+            className="ms-ListGridReactCSsuggestion"
             items={this.state.items}
             getItemCountForPage={this._getItemCountForPage}
             getPageHeight={this._getPageHeight}
@@ -220,16 +220,16 @@ export default class ReactAIsuggestion extends React.Component<IReactAIsuggestio
   private _onRenderCell = (item: any, index: number | undefined): JSX.Element => {
     return (
       <div
-        className="ms-ListGridReactAISuggestion-tile"
+        className="ms-ListGridReactCSsuggestion-tile"
         data-is-focusable={true}
         style={{
           width: 100 / this._columnCount + '%'
         }}
       >
-        <div className="ms-ListGridReactAISuggestion-sizer">
-          <div className="msListGridReactAISuggestion-padder">
-            <img src={item.thumbnail} className="ms-ListGridReactAISuggestion-image" />
-            <span className="ms-ListGridReactAISuggestion-label"><Fragment>{item.tags}</Fragment></span>
+        <div className="ms-ListGridReactCSsuggestion-sizer">
+          <div className="msListGridReactCSsuggestion-padder">
+            <img src={item.thumbnail} className="ms-ListGridReactCSsuggestion-image" />
+            <span className="ms-ListGridReactCSsuggestion-label"><Fragment>{item.tags}</Fragment></span>
           </div>
         </div>
       </div>

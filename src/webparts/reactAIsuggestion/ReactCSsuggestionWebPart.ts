@@ -7,18 +7,18 @@ import {
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
  
-import ReactAIsuggestion from './components/ReactAIsuggestion';
-import { IReactAIsuggestionProps } from './components/IReactAIsuggestionProps';
+import ReactCSsuggestion from './components/ReactCSsuggestion';
+import { IReactCSsuggestionProps } from './components/IReactCSsuggestionProps';
 
-export interface IReactAIsuggestionWebPartProps {
+export interface IReactCSsuggestionWebPartProps {
   description: string;
 }
 
-export default class ReactAIsuggestionWebPart extends BaseClientSideWebPart<IReactAIsuggestionWebPartProps> {
+export default class ReactCSsuggestionWebPart extends BaseClientSideWebPart<IReactCSsuggestionWebPartProps> {
 
   public render(): void {
-    const element: React.ReactElement<IReactAIsuggestionProps> = React.createElement(
-      ReactAIsuggestion,
+    const element: React.ReactElement<IReactCSsuggestionProps> = React.createElement(
+      ReactCSsuggestion,
       {
         context: this.context
       }

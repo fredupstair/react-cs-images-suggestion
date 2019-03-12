@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "react-ml-images-suggestion-client-side-solution",
+    "name": "react-cs-images-suggestion-client-side-solution",
     "id": "a8a5cc23-dbca-491c-801f-94b6d5ec3820",
     "version": "1.0.0.0",
     "includeClientSideAssets": true
   },
   "paths": {
-    "zippedPackage": "solution/react-ml-images-suggestion.sppkg"
+    "zippedPackage": "solution/react-cs-images-suggestion.sppkg"
   }
 }
