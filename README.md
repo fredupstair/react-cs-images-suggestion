@@ -1,15 +1,15 @@
-# react-ai-images-suggestion
+# react-ml-images-suggestion
 
 ## Summary
 A SPFX webpart using the open source library [react-dropzone](https://github.com/react-dropzone/react-dropzone) to upload an image and immediately search for visually similar images inside a SharePoint Online Picture Library, by the employment of [Azure Cognitive Services - Computer Vision](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/) and [SharePoint Search REST API](https://docs.microsoft.com/en-us/sharepoint/dev/general-development/sharepoint-search-rest-api-overview). 
-Keywords of the images in the library are enriched during upload thanks to a Microsoft Flow connected to the Azure Cognitive Services Computer Vision (thanks to [rasper87](https://rasper87.wordpress.com/2018/05/11/sharepoint-auto-tagging-with-ai-and-flow/) for the inspiration, steps 1-4 in the architecture)
+Keywords of the images in the library are enriched during upload thanks to a Microsoft Flow connected to the Azure Cognitive Services Computer Vision (thanks to [rasper87](https://rasper87.wordpress.com/2018/05/11/sharepoint-auto-tagging-with-ml-and-flow/) for the inspiration, steps 1-4 in the architecture)
 
 
 ## Architecture
-![Architecture](./assets/react-ai-images-suggestion.png)
+![Architecture](./assets/react-ml-images-suggestion.png)
 
-## react-ai-images-suggestion SPFX WebPart in action!
-![WebPartInAction](./assets/react-ai-images-suggestion-spfx-webpart-action.gif)
+## react-ml-images-suggestion SPFX WebPart in action!
+![WebPartInAction](./assets/react-ml-images-suggestion-spfx-webpart-action.gif)
 
 ## Microsoft Flow in action!
 ![FlowInAction](./assets/flow-cognitive-documentlibrary.gif)
@@ -33,7 +33,7 @@ Keywords of the images in the library are enriched during upload thanks to a Mic
 
 Solution|Author
 --------|---------
-react-ai-images-suggestion | [Federico Porceddu](https://www.federicoporceddu.com)
+react-ml-images-suggestion | [Federico Porceddu](https://www.federicoporceddu.com)
 
 ## Version history
 
@@ -70,4 +70,4 @@ This webpart illustrates the following concepts:
 - [react-dropzone](https://github.com/react-dropzone/react-dropzone)
 - [Office UI Fabric React Component List](https://developer.microsoft.com/en-us/fabric#/components/list#Variants)
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-solutions/solutions/TimeAway" /># react-ai-images-suggestion
+<img src="https://telemetry.sharepointpnp.com/sp-dev-solutions/solutions/TimeAway" /># react-ml-images-suggestion
