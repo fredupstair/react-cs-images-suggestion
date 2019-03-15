@@ -70,4 +70,3 @@ This webpart illustrates the following concepts:
 - [react-dropzone](https://github.com/react-dropzone/react-dropzone)
 - [Office UI Fabric React Component List](https://developer.microsoft.com/en-us/fabric#/components/list#Variants)
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-solutions/solutions/TimeAway" /># react-cs-images-suggestion
