@@ -28,7 +28,7 @@ export interface IReactCSsuggestionProps {
 export default class ReactCSsuggestion extends React.Component<IReactCSsuggestionProps, IReactCSsuggestionState> {
 
 
-  private cognitiveServicesKey: string = "";
+  private cognitiveServicesKey: string = "592f8d1c60a84575a807f7c336b5522d";
   private cognitiveServicesVisionUrl: string = "https://westeurope.api.cognitive.microsoft.com/vision/v2.0/tag";
 
 
